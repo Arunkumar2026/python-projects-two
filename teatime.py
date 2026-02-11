@@ -3,17 +3,33 @@
 #total bill
 #add items 
 #delete items
+menu_items = {
+    1:('Tea', 10),
+    2:('Milk', 10),
+    3:('Coffee',20),
+    4:('Boost',15)
+}
+
+cart = []
 
 def menu():
-    print("1.Tea - 10rs")
-    print("2.Milk - 10rs")
-    print("3.Coffee - 20rs")
-    print("4.Boost - 15rs")
+    for key,value in menu_items.items():
+        print(f'{key}.{value[0]} - {value[1]}rs')
+
 
 
 
 def yourOrder():
-    print("This is place order function")
+    menu()
+    try:
+        order = input("Enter item number to add to cart: ")
+        if order in menu_items:
+            cart.append(menu_items[order])
+            print(f'{menu_items[order[0]]} added to cart')
+        else:
+            print("Invalid item number")
+    except ValueError:
+        print("Please enter a valid number")
 
 def cancleOrder():
     print("This is cancle order function")
@@ -23,30 +39,20 @@ def showBill():
 while True:
     print("----- Welcome to Tea Time Cafe -----")
     print("1.Menu")
-    print("2.Your order")
-    print("3.Cancle order")
-    print("4.Show Bill")
-    print("5.Exit")
+    print("2.Cancle order")
+    print("3.Show Bill")
+    print("4.Exit")
     # break
     choice = input("Enter you choice: ")
+    
     if choice == "1":
-        menu()
-        while True:
-            choice = input("your order: ")
-            menu_2 = input("Do you want still anything (y/n): ")
-            if menu_2 == 'y':
-                menu()
-            else:
-                break
-
-    elif choice == "2":
         yourOrder()
-    elif choice == "3":
+    elif choice == "2":
         cancleOrder()
-    elif choice == "4":
+    elif choice == "3":
         showBill()
-    elif choice == "5":
-        print("Good Bye")
+    elif choice == "4":
+        print("Thank you Visit again!")
         break 
     else:
         print("invalid Choice!")
