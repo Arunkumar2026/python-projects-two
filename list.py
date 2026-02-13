@@ -9,28 +9,65 @@
 def createList():
     return []
 
-def addToList():
-    print("What data type do you want to add?")
-    print("1. String")
-    print("2. Integer")
-    print("3. Boolean")
-    data_choice = input("Enter you choice: ")
-    if data_choice == "1":
-        pass
+
+def addString(my_list):
+    while True:
+        add = input("Add item (y/n): ").lower()
+        if add == "y":
+            string = input("Enter the value: ")
+            my_list.append(string)
+            print(my_list)
+        elif add == "n":
+            return my_list
+        else:
+            print("Please enter y (yes) or n (no)")
+
+
+def addInt(my_list):
+    while True:
+        try:
+            num = int(input("Enter the value: "))
+            my_list.append(num)
+            print(my_list)
+        except ValueError:
+            print("Please enter valid number")
+        
+
+
+
+
+
+
+
+def addToList(my_list):
+        print("What data type do you want to add?")
+        print("1. String")
+        print("2. Integer")
+        print("3. Boolean")
+        data_choice = input("Enter you choice: ")
+        if data_choice == "1":
+            string = addString(my_list)
+            return string 
+            # print(f'your list:- {str}')
+        elif choice == "2":
+            integer = addInt(my_list)
+            return  integer
+            # print(f'your list:- {integer}')
+
 
 
 print("-----Welcome to list practice-----")
 while True:
-    print("1. Create list\n")
-    print("2. Add items to list\n")
+    print("\n1. Create list")
+    print("2. Add items")
     choice = input("Enter your choice: ")
     if choice == "1":
-        result = createList()
-        print(f'Empty list:- {result}\n')
+        my_list = createList()
+        print(f'Empty list:- {my_list}\n')
         print("----------------------------------------\n")
         # break
     elif choice == "2":
-        addToList()
+        addToList(my_list)
         break
 
 
