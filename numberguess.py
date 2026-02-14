@@ -14,7 +14,7 @@ second_num = int(input("Enter second number: "))
 random_num = random.randint(first_num, second_num)
 chances = 7
 guess_conter = 0
-print(random_num)
+# print(random_num)
 
 while guess_conter < chances:
     guess_conter += 1
