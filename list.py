@@ -71,3 +71,110 @@ while True:
         break
 
 
+
+''''
+def create_list():
+    return []
+
+
+def add_string(my_list):
+    value = input("Enter string value: ")
+    my_list.append(value)
+    print("Updated List:", my_list)
+
+
+def add_int(my_list):
+    try:
+        value = int(input("Enter integer value: "))
+        my_list.append(value)
+        print("Updated List:", my_list)
+    except ValueError:
+        print("Invalid integer!")
+
+
+def add_bool(my_list):
+    value = input("Enter boolean (true/false): ").lower()
+    if value == "true":
+        my_list.append(True)
+    elif value == "false":
+        my_list.append(False)
+    else:
+        print("Invalid boolean!")
+        return
+    print("Updated List:", my_list)
+
+
+def delete_item(my_list):
+    if not my_list:
+        print("List is empty!")
+        return
+
+    print("Current List:", my_list)
+    value = input("Enter value to delete: ")
+
+    if value.isdigit():
+        value = int(value)
+    elif value.lower() == "true":
+        value = True
+    elif value.lower() == "false":
+        value = False
+
+    if value in my_list:
+        my_list.remove(value)
+        print("Item removed!")
+    else:
+        print("Item not found!")
+
+    print("Updated List:", my_list)
+
+
+def show_list(my_list):
+    print("Current List:", my_list)
+
+
+# ---------------- MAIN PROGRAM ----------------
+
+print("----- Welcome to List Practice -----")
+
+my_list = create_list()
+
+while True:
+    print("\n1. Add Item")
+    print("2. Delete Item")
+    print("3. Show List")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        print("\nWhat type do you want to add?")
+        print("1. String")
+        print("2. Integer")
+        print("3. Boolean")
+
+        type_choice = input("Enter choice: ")
+
+        if type_choice == "1":
+            add_string(my_list)
+        elif type_choice == "2":
+            add_int(my_list)
+        elif type_choice == "3":
+            add_bool(my_list)
+        else:
+            print("Invalid type choice!")
+
+    elif choice == "2":
+        delete_item(my_list)
+
+    elif choice == "3":
+        show_list(my_list)
+
+    elif choice == "4":
+        print("Goodbye Arun 👋 Keep Practicing!")
+        break
+
+    else:
+        print("Invalid choice!")
+
+'''
+
