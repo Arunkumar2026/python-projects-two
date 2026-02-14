@@ -49,7 +49,7 @@ while True:
 
     print(divisible(divident, divisor))
 '''
-
+''''
 num = 2
 print(type(num))
 string = str(num)
@@ -71,9 +71,10 @@ print(s)
 s1 = "kum"      \
 "ar"
 print(s1)
-s2 = '''aru
-n
+s2 = aru'''
+'''n
 kumar'''
+'''
 print(s2)
 
 
@@ -116,3 +117,10 @@ print(list1)
 
 newlist = [1,'arun', True]
 print(newlist)
+'''
+
+import random
+
+number = random.randint(1,6)
+print(number)
+
