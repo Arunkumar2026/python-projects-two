@@ -119,8 +119,11 @@ newlist = [1,'arun', True]
 print(newlist)
 '''
 
-import random
+# import random
 
-number = random.randint(1,6)
-print(number)
-
+# number = random.randint(1,6)
+# print(number)
+import greet
+a = 10
+b = 20
+greet.greet(a,b)
